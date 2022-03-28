@@ -133,6 +133,10 @@ namespace Assessment_1_OOP
             input = input.Replace("?", "");
             input = input.Replace("!", "");
 
+            //sets the file as file name and clears any previous data
+            string fileName = @"C:\Users\User\Documents\A_UoL\Assessment 1 OOP\Long Words.txt";
+            File.Delete(fileName);
+
             string[] wordsList = input.Split(" ");
 
             for (int i = 0; i < wordsList.Length; i++)
@@ -141,20 +145,10 @@ namespace Assessment_1_OOP
                 {
                     ////Adds word to wordsList if longer than 7 characters
                     words.Add(wordsList[i]);
+                    //Writes words that are longer than 7 characters to the file
+                    File.WriteAllLines(fileName, words);
                 }
             }
-
-            //Asks for a location to store file
-            Console.WriteLine("Enter the location of your text file: ");
-            string fileName = @"" + Console.ReadLine();
-
-            //Deletes specified file
-            File.Delete(fileName);
-            //Adds lines to file
-            File.AppendAllLines(fileName, words);
-
-            //Displays current contents of file
-            Console.WriteLine(File.ReadAllText(fileName));
         }
 
         public Dictionary<char, int> letterFrequency(string input)
