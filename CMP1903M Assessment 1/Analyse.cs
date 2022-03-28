@@ -143,18 +143,6 @@ namespace Assessment_1_OOP
                     words.Add(wordsList[i]);
                 }
             }
-
-            //Asks for a location to store file
-            //Console.WriteLine("Enter the location of your text file: ");
-            //string fileName = @"" + Console.ReadLine();
-
-            //Deletes specified file
-            //File.Delete(fileName);
-            //Adds lines to file
-            //File.AppendAllLines(fileName, words);
-
-            //Displays current contents of file
-            //Console.WriteLine(File.ReadAllText(fileName));
         }
 
         public Dictionary<char, int> letterFrequency(string input)
