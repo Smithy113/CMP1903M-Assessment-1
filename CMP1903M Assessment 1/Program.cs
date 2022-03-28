@@ -1,6 +1,7 @@
-﻿//Base code project for CMP1903M Assessment 1
+//Base code project for CMP1903M Assessment 1
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,8 @@ namespace Assessment_1_OOP
 {
     class Program
     {
+        
+
         static void Main(string[] args)
         {
             //Local list of integers to hold the first five measurements of the text
@@ -40,18 +43,20 @@ namespace Assessment_1_OOP
                 //Gets the user to input text manually and sets the varibale textInput to the inputted text
                 textInput = input.manualTextInput();
                 Console.WriteLine(textInput);
+
+                analyse.analyseLong(textInput);
             }
             else if (userInput == "2")
             {
-                //Gets user to enter location of the file to open and read text from
-                Console.WriteLine("Enter the location of your file: ");
-                string fileName = @"" + Console.ReadLine();
-
-                //Sets the text from the file to the variable textInput
-                textInput = input.fileTextInput(fileName);
+                string file = @"C:\Users\User\Documents\A_UoL\Assessment 1 OOP\Test File.txt";
+                textInput = input.fileTextInput(file);
+                //string file = File.ReadAllText(@"C:\Users\User\source\repos\CMP1903M Assessment 1\Test File.txt");
+                //@"C:\Users\User\Documents\A_UoL\Assessment 1 OOP\Test File.txt"
                 Console.WriteLine(textInput);
+                //textInput = Console.ReadLine();
 
                 //Runs the analyse 
+                analyse.analyseTextFile(textInput);
                 analyse.analyseLong(textInput);
             }
             else
