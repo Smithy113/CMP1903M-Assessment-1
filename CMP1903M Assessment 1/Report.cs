@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +18,7 @@ namespace Assessment_1_OOP
             Console.WriteLine("The number of Sentences: {0}", input[0]);
             Console.WriteLine("The number of Vowels: {0}", input[1]);
             Console.WriteLine("The number of Consonants: {0}", input[2]);
+            Console.WriteLine("The total number of letters: {0}", (input[1] + input[2]));
             Console.WriteLine("The number of Upper Case Letters: {0}", input[3]);
             Console.WriteLine("The number of Lower Case Letters: {0}", input[4]);
         }
